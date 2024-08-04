@@ -1,0 +1,470 @@
+/* Filename: styles.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+}
+
+nav ul .sign-up {
+  background-color: #000;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.search-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.search-section input {
+  padding: 10px;
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.image-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.image-card {
+  text-align: center;
+  flex: 1 1 calc(16.66% - 40px); /* Adjusting for spacing and flexibility */
+  margin: 10px;
+}
+
+.image-card img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.image-card .caption {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.feature-section {
+  display: flex;
+  align-items: center;
+  padding: 40px 60px; /* Adjust the padding to give more space from the left */
+  gap: 20px;
+}
+
+.feature-text {
+  width: 50%;
+}
+
+.feature-text h4 {
+  font-size: 16px;
+  color: #888;
+}
+
+.feature-text h1 {
+  font-size: 36px;
+  margin: 10px 0;
+}
+
+.feature-text p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.feature-text .buttons button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: 1px solid #000;
+  background: #fff;
+  cursor: pointer;
+}
+.feature-images {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: flex-start; /* Align items to start to allow overlap */
+  align-items: flex-start; /* Align items to the top */
+}
+
+.feature-images .medium-img {
+  width: 60%;
+  border-radius: 5px;
+  z-index: 1; /* Higher z-index to ensure it is above the small image */
+}
+
+.feature-images .small-img {
+  width: 30%;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 30px; /* Raise the small image more */
+  left: 45%; /* Adjust the overlap */
+  z-index: 2; /* Lower z-index to ensure it is below the medium image */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .feature-images .medium-img {
+    width: 45%; /* Adjust width for smaller screens */
+  }
+
+  .feature-images .small-img {
+    width: 22%; /* Adjust width for smaller screens */
+    bottom: 20px; /* Adjust bottom for smaller screens */
+    left: 50%; /* Adjust left for smaller screens */
+    transform: translateX(-25%); /* Adjust the small image positioning */
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-images .medium-img {
+    width: 35%; /* Adjust width for very small screens */
+  }
+
+  .feature-images .small-img {
+    width: 18%; /* Adjust width for very small screens */
+    bottom: 15px; /* Adjust bottom for very small screens */
+    left: 55%; /* Adjust left for very small screens */
+    transform: translateX(-35%); /* Adjust the small image positioning */
+  }
+}
+
+.newest-arrivals {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.newest-arrivals h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 300%; /* Adjust width for multiple slides */
+}
+
+.slide {
+  display: flex;
+  width: 33.33%; /* Show 4 items per slide */
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.card {
+  flex: 1;
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+}
+
+.card img {
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.card a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #000;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .feature-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px; /* Adjusted padding for better spacing */
+  }
+  
+  .feature-text {
+    order: 2;
+    width: 100%;
+  }
+
+  .feature-images {
+    order: 1;
+    width: 100%;
+    padding-bottom: 0;
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .feature-images img {
+    margin-bottom: 10px;
+  }
+
+  .image-card {
+    flex: 1 1 calc(33.33% - 40px); /* Three items per row */
+  }
+}
+
+@media (max-width: 768px) {
+  .image-card {
+    flex: 1 1 calc(50% - 40px); /* Two items per row */
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
+  
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .feature-images .medium-img {
+    width: 80%; /* Adjust size on smaller screen */
+  }
+
+  .feature-images .small-img {
+    width: 50%; /* Adjust size on smaller screen */
+    right: 0; /* Center aligned */
+    position: relative; /* Adjust position to avoid overlap */
+  }
+}
+
+@media (max-width: 480px) {
+  .search-section input {
+    margin-bottom: 20px; /* Adjust the spacing here for mobile */
+  }
+
+  .feature-text .buttons button {
+    padding: 8px 16px;
+    margin: 5px;
+  }
+
+  .image-card {
+    flex: 1 1 calc(50% - 20px); /* Two items per row */
+  }
+  
+  .feature-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 10px; /* Adjusted padding for better spacing */
+  }
+
+  .feature-images {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .feature-images .medium-img {
+    width: 100%; /* Adjust size */
+    position: relative; /* Prevent overlap */
+  }
+
+  .feature-images .small-img {
+    width: 60%; /* Adjust size */
+    position: relative; /* Prevent overlap */
+    bottom: 0;
+    right: 0; /* Center aligned */
+  }
+
+  nav ul {
+    gap: 10px;
+  }
+
+  nav ul li a {
+    font-size: 14px;
+  }
+
+  .navbar {
+    align-items: center;
+  }
+
+  .slides {
+    width: 300%; /* Adjust width for multiple slides */
+  }
+
+  .slide {
+    width: 100%; /* Show 4 items per slide */
+  }
+}
+
+.about-us {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.about-us-container {
+  border: 1px solid #888; /* Border color */
+  padding: 20px;
+  max-width: 600px;
+  text-align: center;
+}
+
+.about-us h4 {
+  font-size: 16px;
+  color: #888;
+}
+
+.about-us h1 {
+  font-size: 36px;
+  margin: 10px 0;
+}
+
+.about-us p {
+  color: #666;
+  margin-bottom:20px;
+ }
+
+/* Footer Section */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 20px;
+  border: 1px solid #888; /* Border color */
+  max-width: 1200px;
+  margin: 0 auto 20px auto; /* Center align within footer and add space below */
+  gap: 40px; /* Add more gap between left and right sections */
+}
+
+.footer-left {
+  max-width: 50%;
+}
+
+.footer-left .logo {
+  display: block;
+  margin-bottom: 20px; /* Add space below logo */
+}
+
+.footer-left .contact-info {
+  margin-bottom: 20px; /* Add space below contact info */
+}
+
+.footer-left .contact-info p {
+  margin-bottom: 10px; /* Add space between contact info paragraphs */
+}
+
+.footer-right {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px; /* Increase gap between links */
+}
+
+.footer-links {
+  text-align: right;
+}
+
+.footer-links a {
+  margin: 5px 0;
+  text-decoration: none;
+}
+
+.footer-logo .contact-info p,
+.footer-logo .social-icons a,
+.footer-links a {
+  color: #666;
+}
+
+.footer-logo .contact-info p strong,
+.footer-links a {
+  color: #888;
+}
+
+.company-logo {
+  margin-top: 20px; /* Add space above the company logo */
+  text-align: right;
+}
+
+.footer-nav {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Ensure single row layout */
+  gap: 20px; /* Add gap between elements if necessary */
+}
+
+.footer-nav p {
+  margin: 0;
+}
+
+.footer-nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Add spacing between links */
+}
+
+.footer-nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-nav-links a:hover {
+  text-decoration: underline;
+}
